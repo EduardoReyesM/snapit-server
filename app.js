@@ -21,10 +21,10 @@ app.use("/api", indexRoutes);
 const postRoutes = require("./routes/Post.routes");
 app.use("/api" , postRoutes);
 
-const eventRoutes = require("./routes/events.routes");
+const eventRoutes = require("./routes/Events.routes");
 app.use("/api" , eventRoutes);
 
-const marketRoutes = require("./routes/marketPlace.routes")
+const marketRoutes = require("./routes/MarketPlace.routes")
 app.use("/api" , marketRoutes);
 
 const authRoutes = require("./routes/auth.routes");
