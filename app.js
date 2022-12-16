@@ -18,7 +18,7 @@ require("./config")(app);
 const indexRoutes = require("./routes/index.routes");
 app.use("/api", indexRoutes);
 
-const postRoutes = require("./routes/post.routes");
+const postRoutes = require("./routes/Post.routes");
 app.use("/api" , postRoutes);
 
 const eventRoutes = require("./routes/events.routes");
