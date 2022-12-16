@@ -2,20 +2,24 @@ const mongoose = require('mongoose');
 const { Schema, model } = mongoose;
  
 const EventsSchema = new Schema({
-  Picture: {
+  user: {
+    type: Schema.Types.ObjectId, ref: 'User',
+    required:true,
+  },
+  name: {
     type:String,
-    require: true,
-},
+  },
+  picture: {
+    type:String,
+    required: true,
+  },
   description: {
     type:String,
   },
-   interested: {
-    type:String,
-   },
-   share: {
-    type:String,
-   },
-  project: { type: Schema.Types.ObjectId, ref: 'events' }
+   
+}, {
+  // this second object adds extra properties: `createdAt` and `updatedAt`
+  timestamps: true,
 });
  
-module.exports = model('Events', EventsSchema);
+module.exports = model('Event', EventsSchema);

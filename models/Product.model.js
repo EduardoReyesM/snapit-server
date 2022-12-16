@@ -1,24 +1,29 @@
 const mongoose = require('mongoose');
 const { Schema, model } = mongoose;
  
-const PostSchema = new Schema({
+const ProductSchema = new Schema({
   user: {
     type: Schema.Types.ObjectId, ref: 'User',
     required:true,
   },
+  productName:{
+    type:String,
+  },
   picture: {
     type:String,
-    required:true,
-},
+    required: true,
+  },
+  price: {
+    type:String,
+    required: true,
+  },
   description: {
     type:String,
   },
-  comments: [{
-    type: Schema.Types.ObjectId, ref:"Comment"
-  }]
+
 }, {
   // this second object adds extra properties: `createdAt` and `updatedAt`
   timestamps: true,
 });
  
-module.exports = model('Post', PostSchema);
+module.exports = model('Product', ProductSchema);

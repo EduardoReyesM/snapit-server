@@ -18,6 +18,15 @@ require("./config")(app);
 const indexRoutes = require("./routes/index.routes");
 app.use("/api", indexRoutes);
 
+const postRoutes = require("./routes/post.routes");
+app.use("/api" , postRoutes);
+
+const eventRoutes = require("./routes/events.routes");
+app.use("/api" , eventRoutes);
+
+const marketRoutes = require("./routes/marketPlace.routes")
+app.use("/api" , marketRoutes);
+
 const authRoutes = require("./routes/auth.routes");
 app.use("/auth", authRoutes);
 
